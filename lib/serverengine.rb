@@ -35,6 +35,7 @@ module ServerEngine
     :MultiThreadServer => 'serverengine/multi_thread_server',
     :ProcessManager => 'serverengine/process_manager',
     :Worker => 'serverengine/worker',
+    :Processor => 'serverengine/processor',
     :VERSION => 'serverengine/version',
   }.each_pair {|k,v|
     autoload k, File.expand_path(v, File.dirname(__FILE__))
