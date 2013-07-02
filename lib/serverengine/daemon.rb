@@ -96,6 +96,11 @@ module ServerEngine
 
     def main
       unless @daemonize
+        if @pid_path
+          File.open(@pid_path, "w") {|f|
+            f.write "#{Process.pid}\n"
+          }
+        end
         s = create_server(create_logger)
         s.install_signal_handlers
         s.main
